@@ -56,7 +56,7 @@ Passwort:<br>
 <input type="submit" class="btn btn-primary" value="Login">
 <br>
 <br>
-<INPUT TYPE="button" class="btn btn-primary" value="Noch kein Konto? BITTE!" onClick="parent.location='registrierenadmin.php'"></FORM>
+<INPUT TYPE="button" class="btn btn-primary" value="Noch kein Konto?" onClick="parent.location='registrierenadmin.php'"></FORM>
 
 
 </form> 
