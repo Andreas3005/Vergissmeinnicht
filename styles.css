@@ -1,8 +1,9 @@
-<style type = "text/css">
+<style>
+
 #logo{
 	
-  width: 1%; 
-  height: 1%;
+  width: 10%; 
+  height: 10%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -15,7 +16,7 @@
     padding: 1,5% 2%;
 	display: block;
     margin-left: auto;
-    margin-right: auto 
+    margin-right: auto;
 
 
 
@@ -23,12 +24,12 @@
 #Login, #Registrieren, #Username {
 	display: block;
     margin-left: auto;
-    margin-right: auto 
+    margin-right: auto;
 }
 #textzentriert{
 	display: block;
     margin-left: auto;
-    margin-right: auto 
+    margin-right: auto;
 }
 
 body {
