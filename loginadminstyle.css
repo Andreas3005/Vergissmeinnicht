@@ -15,7 +15,11 @@
  }
 
 	body {
+<<<<<<< HEAD
+	  background-color: yellow;
+=======
 	  background-color: blue;
+>>>>>>> 95ca02965347e28961cfecafbc1df19073b85e97
 	}
 
 
