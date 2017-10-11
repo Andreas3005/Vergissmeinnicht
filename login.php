@@ -51,9 +51,9 @@ if(isset($_GET['login'])) {
     box-sizing: border-box;
 
  }
-.Username {
+Username {
 	
-	color: green;
+	color: blue;
 	
 }
 
