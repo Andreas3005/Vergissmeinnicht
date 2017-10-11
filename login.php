@@ -44,7 +44,7 @@ if(isset($errorMessage)) {
 }
 ?>
 
-<img src="https://cdn.pixabay.com/photo/2012/04/24/16/21/rainbow-40317_960_720.png" id="logo">
+<a href="https://xnxx.com"> <img src="https://cdn.pixabay.com/photo/2012/04/24/16/21/rainbow-40317_960_720.png" id="logo"> </a>
 
 <form action="?login=1" method="post" id="Username"> <br>
 <p id="Username" align="center"><b> Username </b></p> 
