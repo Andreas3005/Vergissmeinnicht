@@ -25,17 +25,17 @@ if(isset($_GET['login'])) {
 <html> 
 <head>
 
-    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
 
   
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 
 
-    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script>
-
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script> 
   <title>Login</title> 
   <style>
-  #logo {
+#logo {
   width: 10%%; 
   height: 10%;
   align: left;
@@ -43,16 +43,23 @@ if(isset($_GET['login'])) {
 }
 
 #standardbox{
-           width: 50%;
+	size: 20;
+    width: 50%;
     padding: 1,5% 2%;
-    margin: 0,5% 0;
+    margin-left: 20%;
+	margin-right: 20%;
     box-sizing: border-box;
 
  }
+.Username {
+	
+	color: green;
+	
+}
 
-	body {
+body {
 	  background-color: green;
-	}
+	}{
 
 
 </style>
@@ -67,17 +74,14 @@ if(isset($errorMessage)) {
 
 <!-- <img src="img/LOGO.png" id='logo' alt="Selfhtml">-->
 
-<form action="?login=1" method="post">
-Username:<br>
-<input type="user_username" id='standardbox{' name="user_username"><br><br>
- 
-Passwort:<br>
+<form action="?login=1" method="post" id="Username"> Username:<br>
+<input type="user_username" id='standardbox' name="user_username"><br><br> Passwort:<br>
 <input type="password" id='standardbox' name="user_passwort"><br>
 <br>
 <input type="submit" class="btn btn-primary" value="Login">
 <br>
 <br>
-<INPUT TYPE="button" class="btn btn-primary" value="Noch kein Konto? Hier Registrieren!" onClick="parent.location='registrieren.php'"></FORM>
+<INPUT type="button" class="btn btn-dark" value="Noch kein Konto? Hier Registrieren!" onClick="parent.location='registrieren.php'"></FORM>
 
 
 </form> 
