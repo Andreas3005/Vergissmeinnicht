@@ -24,7 +24,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
     box-sizing: border-box;
 
  }
- 
+ gjhgghjghj
 
         body {
           background-color: green;
