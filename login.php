@@ -44,7 +44,7 @@ if(isset($errorMessage)) {
 }
 ?>
 
-<img src="LOGO.png" id="standardbox">
+<img src="https://cdn.pixabay.com/photo/2012/04/24/16/21/rainbow-40317_960_720.png" id="logo">
 
 <form action="?login=1" method="post" id="Username"> <br>
 <p id="Username" align="center"><b> Username </b></p> 
