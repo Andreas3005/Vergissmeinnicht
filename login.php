@@ -36,31 +36,43 @@ if(isset($_GET['login'])) {
   <title>Login</title> 
   <style>
 #logo {
-  width: 10%%; 
+  width: 10%; 
   height: 10%;
-  align: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
 
 }
 
 #standardbox{
-	size: 20;
-    width: 50%;
+    width: 30%;
     padding: 1,5% 2%;
-	margin-right: 20%;
-	margin-left: 20%;
-    box-sizing: border-box;
+	display: block;
+    margin-left: auto;
+    margin-right: auto 
+
+
 
  }
-Username {
-	
-	color: blue;
-	
+#Login, #Registrieren {
+	display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+#hansi{
+	display: block;
+    margin-left: auto;
+    margin-right: auto 
 }
 
 body {
-	  background-color: green;
+	  background-color: grey;
 	}{
-
+		
+value {
+	text-align: center;
+}
 
 </style>
 </head> 
@@ -72,16 +84,13 @@ if(isset($errorMessage)) {
 }
 ?>
 
-<!-- <img src="img/LOGO.png" id='logo' alt="Selfhtml">-->
+<img src="LOGO.png" id="logo">
 
 <form action="?login=1" method="post" id="Username"> Username:<br>
-<input type="user_username" id='standardbox' name="user_username"><br><br> Passwort:<br>
-<input type="password" id='standardbox' name="user_passwort"><br>
-<br>
-<input type="submit" class="btn btn-primary" value="Login">
-<br>
-<br>
-<INPUT type="button" class="btn btn-dark" value="Noch kein Konto? Hier Registrieren!" onClick="parent.location='registrieren.php'"></FORM>
+<input type="user_username" id="standardbox" name="user_username"><br><br> <text id ="hansi"> Passwort: </text><br>
+<input type="password" id="standardbox" name="user_passwort"><br>
+<input type="submit" id ="Login" value="Login" class= "btn btn-dark"><br>
+<input type="button" id="Registrieren" class= "btn btn-dark" value="Noch kein Konto? Hier Registrieren!" onClick="parent.location='registrieren.php'"></FORM>
 
 
 </form> 
