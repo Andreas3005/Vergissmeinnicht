@@ -34,7 +34,7 @@ if(isset($_GET['login'])) {
     <!-- <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script> -->
 
 <title>Login</title> 
-<link href="loginadminstyle.css" rel="stylesheet" type="text/css">
+<link href="styles.css" rel="stylesheet" type="text/css">
 </head> 
 <body>
  

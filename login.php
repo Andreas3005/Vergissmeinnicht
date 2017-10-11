@@ -34,47 +34,7 @@ if(isset($_GET['login'])) {
 
     <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script> 
   <title>Login</title> 
-  <style>
-#logo {
-  width: 10%; 
-  height: 10%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
-
-}
-
-#standardbox{
-    width: 30%;
-    padding: 1,5% 2%;
-	display: block;
-    margin-left: auto;
-    margin-right: auto 
-
-
-
- }
-#Login, #Registrieren, #Username {
-	display: block;
-    margin-left: auto;
-    margin-right: auto 
-}
-#textzentriert{
-	display: block;
-    margin-left: auto;
-    margin-right: auto 
-}
-
-body {
-	  background-color: #ff6347;
-	}{
-		
-value {
-	text-align: center;
-}
-
-</style>
+  <link href="styles.css" rel="stylesheet" type="text/css">
 </head> 
 <body>
  
