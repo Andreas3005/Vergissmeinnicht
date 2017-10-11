@@ -47,6 +47,7 @@ if(isset($_GET['login'])) {
     width: 50%;
     padding: 1,5% 2%;
     margin-left: 10%;
+    margin-left: 200%;
 	margin-right: 20%;
     box-sizing: border-box;
 
