@@ -55,7 +55,7 @@ if(isset($_GET['login'])) {
 
 
  }
-#Login, #Registrieren {
+#Login, #Registrieren, #Username {
 	display: block;
     margin-left: auto;
     margin-right: auto 
@@ -88,6 +88,12 @@ if(isset($errorMessage)) {
 
 <form action="?login=1" method="post" id="Username"><p id="textzentriert"> Username:</p><br>
 <input type="user_username" id="standardbox" name="user_username"><br><br> <text id ="hansi"> Passwort: </text><br>
+=======
+<form action="?login=1" method="post" id="Username"> <br>
+<p id="Username" align="center"><b> Username </b></p> 
+<input type="user_username" id="standardbox" name="user_username"><br>
+<p id="Username" align="center"><b> Passwort </b></p> 
+>>>>>>> 3c7457a37830b26e7895f21fab91bbc5d50accc7
 <input type="password" id="standardbox" name="user_passwort"><br>
 <input type="submit" id ="Login" value="Login" class= "btn btn-dark"><br>
 <input type="button" id="Registrieren" class= "btn btn-dark" value="Noch kein Konto? Hier Registrieren!" onClick="parent.location='registrieren.php'"></FORM>
