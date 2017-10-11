@@ -60,14 +60,14 @@ if(isset($_GET['login'])) {
     margin-left: auto;
     margin-right: auto 
 }
-#hansi{
+#textzentriert{
 	display: block;
     margin-left: auto;
     margin-right: auto 
 }
 
 body {
-	  background-color: grey;
+	  background-color: #ff6347;
 	}{
 		
 value {
@@ -86,7 +86,7 @@ if(isset($errorMessage)) {
 
 <img src="LOGO.png" id="logo">
 
-<form action="?login=1" method="post" id="Username"> Username:<br>
+<form action="?login=1" method="post" id="Username"><p id="textzentriert"> Username:</p><br>
 <input type="user_username" id="standardbox" name="user_username"><br><br> <text id ="hansi"> Passwort: </text><br>
 <input type="password" id="standardbox" name="user_passwort"><br>
 <input type="submit" id ="Login" value="Login" class= "btn btn-dark"><br>
