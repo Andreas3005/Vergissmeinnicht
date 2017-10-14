@@ -34,7 +34,7 @@ if(isset($_GET['login'])) {
     <!-- <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script> -->
 
 <title>Login</title> 
-<link href="styles.css" rel="stylesheet" type="text/css">
+<link href="css/styles.css" rel="stylesheet" type="text/css">
 </head> 
 <body>
  
@@ -47,16 +47,16 @@ if(isset($errorMessage)) {
 <!-- <img src="img/LOGO.png" id='logo' alt="Selfhtml">-->
 
 <form action="?login=1" method="post">
-Username:<br>
-<input type="admin_username" id='standardbox{' name="admin_username"><br><br>
+<p id="Username" align="center"><b> Username </b></p> 
+<input type="admin_username" id='standardbox' name="admin_username"><br><br>
  
-Passwort:<br>
+<p id="Username" align="center"><b> Passwort </b></p>
 <input type="password" id='standardbox' name="admin_passwort"><br>
 <br>
-<input type="submit" class="btn btn-primary" value="Login">
+<input type="submit" id ="Login" class="btn btn-primary" value="Login">
 <br>
 <br>
-<INPUT TYPE="button" class="btn btn-primary" value="Noch kein Konto?" onClick="parent.location='registrierenadmin.php'"></FORM>
+<INPUT TYPE="button" id="Registrieren" class="btn btn-primary" value="Noch kein Konto?" onClick="parent.location='registrierenadmin.php'"></FORM>
 
 
 </form> 

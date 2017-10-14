@@ -34,7 +34,7 @@ if(isset($_GET['login'])) {
 
     <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script> 
   <title>Login</title> 
-  <link href="styles.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head> 
 <body>
  
@@ -44,7 +44,7 @@ if(isset($errorMessage)) {
 }
 ?>
 
-<a href="login.php"> <img src="LOGO.png" id="logo"> </a>
+<a href="login.php"> <img src="Bilder/LOGO.png" id="logo"> </a>
 
 <form action="?login=1" method="post" id="Username"> <br>
 <p id="Username" align="center"><b> Username </b></p> 
