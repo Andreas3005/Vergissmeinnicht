@@ -6,16 +6,10 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 
 
-    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script>
-<script src="css/jquery-3.2.1.min"></script>
-
+ 
+<link href="css/styles.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
-	/*jQuery(function($){
-    	     $( '.menu-btn' ).click(function(){
-    	     $('.responsive-menu').toggleClass('expand')
-    	     })
-        })*/
-		
+
 		var berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker"];
 		random(berufe);
 		function richtig(){
@@ -25,16 +19,16 @@
 			alert("Falsch");
 		}
 		function random(berufe){
-			var Dachdecker = ["schweißen", "sägen", "schleifen", "hämmern"];
-			var Schlosser = ["fliegen", "schweißen", "scleifen", "schneiden"];
-			var Maler = ["sägen", "abdecken", "malen", "pinseln"];
-			var Mechaniker = ["anpflanzen", "austauschen", "schweißen", "bohren"];
+			var Dachdecker = new Array  ("schweißen", "sägen", "schleifen", "hämmern");
+			var Schlosser = new Array ("fliegen", "schweißen", "scleifen", "schneiden");
+			var Maler = new Array ("sägen", "abdecken", "malen", "pinseln");
+			var Mechaniker = new Array ("anpflanzen", "austauschen", "schweißen", "bohren");
 			
 			
 			var berufstelle = Math.floor(Math.random() * berufe.length);
 			var berufToUse = berufe[berufstelle];
 			berufe.splice(berufstelle,1);
-			//document.write("<img src='Bilder/"berufToUse".jpg'>");
+			document.write("<img src='Bilder/Berufe/" + berufToUse + ".jpg' id'logo'>");
 			for(var i = 0; i < berufToUse.length; i++){
 			var notdouble = ["", "", "", ""];
             var a = 0;
@@ -43,19 +37,20 @@
 		
 		
 				
-		
-				var machenstelle = Math.floor(Math.random() * berufToUse.length);
-				var valueToUse = berufToUse[machenstelle];
+				var beruf1 = berufToUse.toString();;
+				var machenstelle = Math.floor(Math.random() * beruf1.length);
+				var valueToUse = beruf1[machenstelle];//Fehler beim Array 
+				alert(valueToUse);
 				if (valueToUse !=  notdouble[0] & valueToUse !=  notdouble[1] & valueToUse !=  notdouble[2] & valueToUse !=  notdouble[3])
 					{
 					notdouble[a] = valueToUse;
 					a++;
 						if(machenstelle == 0)
 						{
-							document.write('<INPUT TYPE="button" class="btn btn-primary" value="'valueToUse'" id"berufbutton" onClick="richtig();">');
+							document.write('<INPUT TYPE="button" class="btn btn-primary" value="' + valueToUse + '" id"Login" onClick="richtig();">');
 						}
 						else{
-							document.write('<INPUT TYPE="button" class="btn btn-primary" value="'valueToUse'" id"berufbutton" onClick="falsch();">');
+							document.write('<INPUT TYPE="button" class="btn btn-primary" value="' + valueToUse + '" id"Login" onClick="falsch();">');
 						}
 			
 					}
