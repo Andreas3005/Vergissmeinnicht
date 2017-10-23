@@ -15,8 +15,15 @@
 		function richtig(){
 			alert("Richtig");
 			<?php
-			$berufe = "var berufe";
-			echo $berufe  "test";
+				session_start();
+				if (isset($_GET["berufe"]))
+				echo '
+				<script type="text/javascript">
+				'.$_GET["berufe"].' = var berufe;
+				</script>
+				';
+				echo $berufe;
+				//$_SESSION['berufe'] = "$berufe";;
 			?>
 		}
 		function falsch(){
@@ -34,6 +41,7 @@
 			var berufToUse = berufe[berufstelle];
 			berufe.splice(berufstelle,1);
 			document.write("<img src='Bilder/Berufe/" + berufToUse + ".jpg' id='logo'>");
+			document.write("<h1 id='Login'>Was macht der Beruf " + berufToUse + " nicht?</h1>");
 			var a = 0;
 			var notdouble = ["", "", "", ""];
             
