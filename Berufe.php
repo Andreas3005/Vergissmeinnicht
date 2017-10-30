@@ -12,10 +12,14 @@
 
 		const berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker"];
 		random(berufe);
+		<?php
+		$db = mysqli_connect("localhost", "root", "", "regenbogenheim");
+		$score_punkte = "0";
+		?>
 		function richtig(){
 			alert("Richtig");
 			<?php
-				session_start();
+			/*	session_start();
 				if (isset($_GET["berufe"]))
 				echo '
 				<script type="text/javascript">
@@ -23,11 +27,18 @@
 				</script>
 				';
 				echo $berufe;
-				//$_SESSION['berufe'] = "$berufe";;
+				//$_SESSION['berufe'] = "$berufe";;*/
+				$id_user = "1";
+				
+				$eintragen = mysqli_query($db, "INSERT INTO heim_score (id_user, score_punkte) VALUES ('$id_user', '$score_punkte')");
 			?>
 		}
 		function falsch(){
+			<?php
+			$score_punkte = $score_punkte + 1;
+			?>
 			alert("Falsch");
+	
 		}
 		function random(berufe){
 			var machen = new Array();
