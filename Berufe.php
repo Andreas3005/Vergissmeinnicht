@@ -9,17 +9,26 @@
  
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
-
-		const berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker"];
+        var test = document.cookie;
+		alert(test);
+		var berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker"];
+		if (test != null)
+		{
+		berufe = [];
+		 berufe = test;
+		
+		}
 		random(berufe);
-		<?php
+		/*<?php
 		$db = mysqli_connect("localhost", "root", "", "regenbogenheim");
 		$score_punkte = "0";
-		?>
+		?>*/
 		function richtig(){
+			
 			alert("Richtig");
-			<?php
-			/*	session_start();
+			document.cookie = berufe;
+			/*<?php
+				session_start();
 				if (isset($_GET["berufe"]))
 				echo '
 				<script type="text/javascript">
@@ -27,11 +36,12 @@
 				</script>
 				';
 				echo $berufe;
-				//$_SESSION['berufe'] = "$berufe";;*/
+				//$_SESSION['berufe'] = "$berufe";;
 				$id_user = "1";
 				
 				$eintragen = mysqli_query($db, "INSERT INTO heim_score (id_user, score_punkte) VALUES ('$id_user', '$score_punkte')");
-			?>
+			?>*/
+			window.location.reload();  
 		}
 		function falsch(){
 			<?php
