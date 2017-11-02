@@ -9,46 +9,65 @@
  
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
-        var test = document.cookie;
-		alert(test);
+        
+		
+		var cookie = getCookie("berufe");
+		
+		var punkte = 0;
 		var berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker"];
-		if (test != null)
+		if (cookie != 0)
 		{
-		berufe = [];
-		 berufe = test;
+			
+			berufe = [];
+			var berufe = cookie.split(",");
+			var laenge = berufe.length;
 		
 		}
 		random(berufe);
-		/*<?php
-		$db = mysqli_connect("localhost", "root", "", "regenbogenheim");
-		$score_punkte = "0";
-		?>*/
+		
+		//Setzt das Cookie
+		function setCookie(cname, cvalue) {
+			var d = new Date();
+			
+			
+			document.cookie = cname + "=" + cvalue + ";path=/";
+		}
+		//Holt sich das Cookie
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+		for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+		}
+		//Wird ausgeführt wenn die Richtige eingabe gemacht wurde
 		function richtig(){
 			
 			alert("Richtig");
-			document.cookie = berufe;
-			/*<?php
-				session_start();
-				if (isset($_GET["berufe"]))
-				echo '
-				<script type="text/javascript">
-				'.$_GET["berufe"].' = var berufe;
-				</script>
-				';
-				echo $berufe;
-				//$_SESSION['berufe'] = "$berufe";;
-				$id_user = "1";
-				
-				$eintragen = mysqli_query($db, "INSERT INTO heim_score (id_user, score_punkte) VALUES ('$id_user', '$score_punkte')");
-			?>*/
+			setCookie("berufe", berufe);
+		
+			
+			if( 1 == laenge )
+			{
+			alert("fertig");
 			window.location.reload();  
+			window.location.href = "zaehlen.php?punkte=" + punkte; 
+			}
+			else{
+			window.location.reload();  
+			}
 		}
 		function falsch(){
-			<?php
-			$score_punkte = $score_punkte + 1;
-			?>
+			punkte = punkte + 1;
 			alert("Falsch");
-	
+			
 		}
 		function random(berufe){
 			var machen = new Array();
@@ -57,10 +76,12 @@
 			machen [2]= ["sägen", "abdecken", "malen", "pinseln"];
 			machen [3] =["anpflanzen", "austauschen", "schweißen", "bohren"];
 			
-			
+			var berufepos = ["Dachdecker", "Schlosser", "Maler", "Mechaniker"];
 			var berufstelle = Math.floor(Math.random() * berufe.length);
 			var berufToUse = berufe[berufstelle];
 			berufe.splice(berufstelle,1);
+			
+			var position = berufepos.indexOf(berufToUse);
 			document.write("<img src='Bilder/Berufe/" + berufToUse + ".jpg' id='logo'>");
 			document.write("<h1 id='Login'>Was macht der Beruf " + berufToUse + " nicht?</h1>");
 			var a = 0;
@@ -74,7 +95,7 @@
 				
 				
 			var machenstelle = Math.floor(Math.random() * 4);	
-			var valueToUse = machen[berufstelle] [machenstelle];
+			var valueToUse = machen[position] [machenstelle];
 				
 				if (valueToUse !=  notdouble[0] & valueToUse !=  notdouble[1] & valueToUse !=  notdouble[2] & valueToUse !=  notdouble[3])
 					{
