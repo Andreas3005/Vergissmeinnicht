@@ -212,7 +212,7 @@ body {
     <br />
     <input type="submit" value="Anlegen" /> 
     <input type="button" class="btn btn-primary" value="Zurück zum Login"
-    onclick="parent.location=&#39;login.php&#39;" /></form><?php
+    onclick="parent.location=login.php;" /></form><?php
                             }
                             ?>
   </body>
