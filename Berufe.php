@@ -15,6 +15,7 @@ if(!isset($_SESSION['id_user'])) {
  
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
+		//document.write('document.getElementById("falsch").style.display = "none";');
 		var uber = getCookie("punkte");
 		if(uber = 0)
 		{
@@ -82,21 +83,7 @@ if(!isset($_SESSION['id_user'])) {
 			window.location.reload();  
 			}
 		}
-		function falsch(){
-			
-			var punkte = getCookie("punkte");
-			
-			punkte.toString()
-			var punkte = Math.floor(punkte);
-			alert(punkte);
-			
-			
-			
-			punkte = punkte + 1;
-			setCookie("punkte", punkte);
-			alert("Falsch");
-			
-		}
+		
 		function random(berufe){
 			var machen = new Array();
 			machen [0] = ["schweißen", "sägen", "schleifen", "hämmern"];
@@ -145,10 +132,25 @@ if(!isset($_SESSION['id_user'])) {
 			}
 			
 			
+			function falsch(){
+			document.write('<h1>Falsch</h1>');
+			var punkte = getCookie("punkte");
+			
+			punkte.toString()
+			var punkte = Math.floor(punkte);
+			alert(punkte);
+			
+			
+			
+			punkte = punkte + 1;
+			setCookie("punkte", punkte);
+			alert("Falsch");
+			
+		}
 			
 		
 </script>
- 
+	
 
 
 </body>
