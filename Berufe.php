@@ -16,11 +16,12 @@ if(!isset($_SESSION['id_user'])) {
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
         
-		
+		//Variablen deklarieren
 		var cookie = getCookie("berufe");
 		
 		var punkte = 0;
 		var berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker"];
+		//Wenn der Cookie nicht befüllt wird er neu befüllt.
 		if (cookie != 0)
 		{
 			
@@ -70,6 +71,7 @@ if(!isset($_SESSION['id_user'])) {
 			}
 		}
 		function falsch(){
+			var cookie = getCookie("berufe");
 			punkte = punkte + 1;
 			alert("Falsch");
 			
