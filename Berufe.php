@@ -15,7 +15,11 @@ if(!isset($_SESSION['id_user'])) {
  
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
-        
+		var uber = getCookie("punkte");
+		if(uber = 0)
+		{
+        var punkte = 0;
+		}
 		//Variablen deklarieren
 		var cookie = getCookie("berufe");
 		
@@ -39,6 +43,7 @@ if(!isset($_SESSION['id_user'])) {
 			
 			document.cookie = cname + "=" + cvalue + ";path=/";
 		}
+	
 		//Holt sich das Cookie
 		function getCookie(cname) {
 			var name = cname + "=";
@@ -54,6 +59,8 @@ if(!isset($_SESSION['id_user'])) {
 		}
 		return "";
 		}
+		
+	
 		//Wird ausgeführt wenn die Richtige eingabe gemacht wurde
 		function richtig(){
 			
@@ -65,6 +72,10 @@ if(!isset($_SESSION['id_user'])) {
 			{
 			alert("fertig"); 
 			var punkte = getCookie("punkte");
+			var punkte = Math.floor(punkte);
+			//Cookie löschen
+			setCookie('punkte', '', -1, '/', '.Berufe.php');
+			setCookie('berufe', '', -1, '/', '.Berufe.php');
 			$.get( "zaehlen.php?punkte=" + punkte + "&spiel=berufe");
 			}
 			else{
@@ -72,7 +83,11 @@ if(!isset($_SESSION['id_user'])) {
 			}
 		}
 		function falsch(){
+			
 			var punkte = getCookie("punkte");
+			
+			punkte.toString()
+			var punkte = Math.floor(punkte);
 			alert(punkte);
 			
 			
