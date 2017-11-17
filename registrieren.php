@@ -170,11 +170,11 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
     <br />
     <p id="Registrieren_Textfeld">Geburtstag
     </p>
-    <input type="date" id='standardbox' name="user_geburtstag" />
+    <input type="date" id='textfeld_geburtstag' name="user_geburtstag"/> 
 	<br />
-    <p id="Registrieren_Textfeld">Erstaufnahme
+    <p id="Registrieren_Textfeld"> Erstaufnahme
 	</p>
-    <input type="date" id='standardbox' name="user_erstaufnahme" />
+    <input type="date" id='textfeld_erstaufnahme' name="user_erstaufnahme" />
     <br />
     <p id="Registrieren_Textfeld">Zustand des Patienten
 	</p>
