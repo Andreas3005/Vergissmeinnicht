@@ -37,7 +37,6 @@
 
 #Registrieren_Textfeld{
 	
-	
 	font-family:'sans-serif';
 	font-weight: bold;	
 	font-size: 25px;
@@ -46,11 +45,22 @@
     margin-left: auto;
     margin-right: auto;
 	text-align: center;
+}
+
+#textfeld_geburtstag, #textfeld_erstaufnahme {
+	
+	width: 30%;
+    padding: 1,5% 2%;
+	
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	text-align
 	
 	
 }
-
-
+	
+	
 
 
 body {
