@@ -17,4 +17,4 @@ CREATE TABLE `regenbogenheim`.`heim_admin` (`id_admin` INT NOT NULL AUTO_INCREME
   `admin_passwort` VARCHAR(100) NULL,  PRIMARY KEY (`id_admin`));
 
 CREATE TABLE `regenbogenheim`.`heim_score` (`score_id` INT NOT NULL AUTO_INCREMENT, `id_user` VARCHAR(45) NULL,
-  `score_punkte` VARCHAR(100) NULL,`score_datum` TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP,  PRIMARY KEY (`score_id`));
+  `score_punkte` VARCHAR(100) NULL, `score_name` VARCHAR(200) NULL,`score_datum` TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP,  PRIMARY KEY (`score_id`));

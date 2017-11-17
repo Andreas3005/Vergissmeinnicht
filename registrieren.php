@@ -203,10 +203,16 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
     <br />
     <input type="submit" value="Anlegen" /> </input>
     <input type="button" class="btn btn-primary" value="Zurück zum Login"
+<<<<<<< HEAD
     onclick="parent.location=&#39;login.php&#39;" /></input>
 	</form>
 	<?php
 							}
 	?>
+=======
+    onclick="parent.location=login.php;" /></form><?php
+                            }
+                            ?>
+>>>>>>> bc7f87d14841609086827613b725ab96b672215e
   </body>
 </html>

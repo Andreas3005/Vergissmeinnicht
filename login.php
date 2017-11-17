@@ -14,7 +14,7 @@ if(isset($_GET['login'])) {
  if ($user !== false && password_verify($user_passwort, $user['user_passwort'])) {
  $_SESSION['id_user'] = $user['id_user'];
  $_SESSION['user_username'] = $user['user_username'];
- header("Location: www.start.php");
+ header("Location:start.php");
  } else {
  $errorMessage = "<b> Username oder Passwort war ungültig</b><br>";
  }
