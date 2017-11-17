@@ -155,64 +155,52 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
                             ?>
 							
     <form action="?register=1" method="post">
-	<p id="Registrieren_Textfeld">Vorname
+	</br>
+	<p id="Registrieren_Textfeld" align ="center" >Vorname
     </p>
-    <br />
-    <input type="text" id='standardbox' name="user_vorname" />
+    <input type="text" align="center" id='standardbox' name="user_vorname" />
     <br />
     <p id="Registrieren_Textfeld">Nachname
     </p>
-	<br />
     <input type="text" id='standardbox' name="user_nachname" />
-    <br />
+	<br />
     <p id="Registrieren_Textfeld">Username
-	 </p>
-    <br />
+	</p>
     <input type="text" id='standardbox' name="user_username" />
     <br />
     <p id="Registrieren_Textfeld">Geburtstag
     </p>
-	<br />
     <input type="date" id='standardbox' name="user_geburtstag" />
-    <br />
+	<br />
     <p id="Registrieren_Textfeld">Erstaufnahme
 	</p>
-    <br />
     <input type="date" id='standardbox' name="user_erstaufnahme" />
     <br />
-    <p style="display:inline" id="Registrieren_Textfeld">Zustand des Patienten
+    <p id="Registrieren_Textfeld">Zustand des Patienten
 	</p>
-    <br />
     <input type="text" id='standardbox' name="user_status_patient" />
     <br />
     <p id="Registrieren_Textfeld">Kommentare
 	</p>
-    <br />
     <input type="text" id='standardbox' name="user_kommentar" />
     <br />
-    <p style="display:inline" id="Registrieren_Textfeld">Dein Passwort
+    <p id="Registrieren_Textfeld">Dein Passwort
 	</p>
-    <br />
     <input type="password" id='standardbox' name="passwort" />
     <br />
-    <p style="display:inline" id="Registrieren_Textfeld" >Passwort wiederholen
+    <p id="Registrieren_Textfeld" >Passwort wiederholen
 	</p>
-    <br />
     <input type="password" id='standardbox' name="passwort2" />
     <br />
     <br />
-    <input type="submit" value="Anlegen" /> </input>
-    <input type="button" class="btn btn-primary" value="Zurück zum Login"
-<<<<<<< HEAD
+    <input id = "Anlegen" type="submit" value="Anlegen" class="btn btn-success" /> </input>
+	</br>
+    <input id = "BackToLogin" type="button" class="btn btn-primary" value="Zurück zum Login"
     onclick="parent.location=&#39;login.php&#39;" /></input>
 	</form>
 	<?php
 							}
 	?>
-=======
-    onclick="parent.location=login.php;" /></form><?php
-                            }
-                            ?>
->>>>>>> bc7f87d14841609086827613b725ab96b672215e
+	</form>
   </body>
 </html>
