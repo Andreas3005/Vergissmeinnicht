@@ -19,7 +19,7 @@ if(!isset($_SESSION['id_user'])) {
 		//Variablen deklarieren
 		var cookie = getCookie("berufe");
 		
-		var punkte = 0;
+	
 		var berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker"];
 		//Wenn der Cookie nicht befüllt wird er neu befüllt.
 		if (cookie != 0)
@@ -64,6 +64,7 @@ if(!isset($_SESSION['id_user'])) {
 			if( 1 == laenge )
 			{
 			alert("fertig"); 
+			var punkte = getCookie("punkte");
 			$.get( "zaehlen.php?punkte=" + punkte + "&spiel=berufe");
 			}
 			else{
@@ -71,8 +72,13 @@ if(!isset($_SESSION['id_user'])) {
 			}
 		}
 		function falsch(){
-			var cookie = getCookie("berufe");
+			var punkte = getCookie("punkte");
+			alert(punkte);
+			
+			
+			
 			punkte = punkte + 1;
+			setCookie("punkte", punkte);
 			alert("Falsch");
 			
 		}
