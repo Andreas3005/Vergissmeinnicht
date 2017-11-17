@@ -21,19 +21,33 @@
     margin-left: auto;
     margin-right: auto;
 
-
-
  }
 #Login, #Registrieren, #Username {
 	display: block;
     margin-left: auto;
     margin-right: auto;
+	text-align: center;
 }
 #textzentriert{
 	display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
+#Registrieren_Textfeld{
+	
+	
+	font-family:'sans-serif';
+	font-weight: bold;	
+	font-size: 15px;
+	
+	display: block;
+    margin-left: 50%;
+    margin-right: 50%;
+	
+	
+}
+
 
 body {
 	  background-color: #add8e6;
