@@ -16,7 +16,7 @@ if(isset($_GET['login'])) {
  $_SESSION['user_username'] = $user['user_username'];
  header("Location:start.php");
  } else {
- $errorMessage = "Username oder Passwort war ungültig<br>";
+ $errorMessage = "<b> Username oder Passwort war ungültig</b><br>";
  }
  
 }

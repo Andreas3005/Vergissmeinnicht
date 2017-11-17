@@ -10,28 +10,8 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
     <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script>
-    <style>
-#logo {
-	width: 80%; 
-	height: 80%;
-
-}
-#standardbox{
-    width: 50%;
-    padding: 1,5% 2%;
-    margin: 0,5% 0;
-    box-sizing: border-box;
-
- }
- 
-
-body {
-    background-color: green;
-    }
-
-
-</style>
-    <title></title>
+	<link href="css/styles.css" rel="stylesheet" type="text/css">
+    <title>!!Registrieren!!</title>
   </head>
   <body>
     <!-- <img src="img/LOGO.png" id='logo' alt="Selfhtml"-->
@@ -173,47 +153,66 @@ body {
                              
                             if($showFormular) {
                             ?>
-    <form action="?register=1" method="post">Vorname:
+							
+    <form action="?register=1" method="post">
+	<p id="Registrieren_Textfeld">Vorname
+    </p>
     <br />
     <input type="text" id='standardbox' name="user_vorname" />
     <br />
-    <br />Nachname:
-    <br />
+    <p id="Registrieren_Textfeld">Nachname
+    </p>
+	<br />
     <input type="text" id='standardbox' name="user_nachname" />
     <br />
-    <br />Username
+    <p id="Registrieren_Textfeld">Username
+	 </p>
     <br />
     <input type="text" id='standardbox' name="user_username" />
     <br />
-    <br />Geburtstag
-    <br />
+    <p id="Registrieren_Textfeld">Geburtstag
+    </p>
+	<br />
     <input type="date" id='standardbox' name="user_geburtstag" />
     <br />
-    <br />Erstaufnahme
+    <p id="Registrieren_Textfeld">Erstaufnahme
+	</p>
     <br />
     <input type="date" id='standardbox' name="user_erstaufnahme" />
     <br />
-    <br />Zustand Patient
+    <p style="display:inline" id="Registrieren_Textfeld">Zustand des Patienten
+	</p>
     <br />
     <input type="text" id='standardbox' name="user_status_patient" />
     <br />
-    <br />Kommentare
+    <p id="Registrieren_Textfeld">Kommentare
+	</p>
     <br />
     <input type="text" id='standardbox' name="user_kommentar" />
     <br />
-    <br />Dein Passwort:
+    <p style="display:inline" id="Registrieren_Textfeld">Dein Passwort
+	</p>
     <br />
     <input type="password" id='standardbox' name="passwort" />
     <br />
-    <br />Passwort wiederholen:
+    <p style="display:inline" id="Registrieren_Textfeld" >Passwort wiederholen
+	</p>
     <br />
     <input type="password" id='standardbox' name="passwort2" />
     <br />
     <br />
-    <input type="submit" value="Anlegen" /> 
+    <input type="submit" value="Anlegen" /> </input>
     <input type="button" class="btn btn-primary" value="Zurück zum Login"
+<<<<<<< HEAD
+    onclick="parent.location=&#39;login.php&#39;" /></input>
+	</form>
+	<?php
+							}
+	?>
+=======
     onclick="parent.location=login.php;" /></form><?php
                             }
                             ?>
+>>>>>>> bc7f87d14841609086827613b725ab96b672215e
   </body>
 </html>
