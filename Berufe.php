@@ -1,4 +1,5 @@
 <html>
+<Meta charset = "UTF-8">
  <head>
      <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css">
 
@@ -65,13 +66,13 @@ if(!isset($_SESSION['id_user'])) {
 		//Wird ausgeführt wenn die Richtige eingabe gemacht wurde
 		function richtig(){
 			
-			alert("Richtig");
+			
 			setCookie("berufe", berufe);
 		
 			
 			if( 1 == laenge )
 			{
-			alert("fertig"); 
+			 
 			var punkte = getCookie("punkte");
 			var punkte = Math.floor(punkte);
 			//Cookie löschen
@@ -83,7 +84,20 @@ if(!isset($_SESSION['id_user'])) {
 			window.location.reload();  
 			}
 		}
-		
+		function falsch(){
+			var punkte = getCookie("punkte");
+			document.getElementById("falsch").style.visibility = 'visible';
+			punkte.toString()
+			var punkte = Math.floor(punkte);
+			
+			
+			
+			
+			punkte = punkte + 1;
+			setCookie("punkte", punkte);
+			
+			
+		}
 		function random(berufe){
 			var machen = new Array();
 			machen [0] = ["schweißen", "sägen", "schleifen", "hämmern"];
@@ -132,26 +146,13 @@ if(!isset($_SESSION['id_user'])) {
 			}
 			
 			
-			function falsch(){
-			document.write('<h1>Falsch</h1>');
-			var punkte = getCookie("punkte");
-			
-			punkte.toString()
-			var punkte = Math.floor(punkte);
-			alert(punkte);
-			
-			
-			
-			punkte = punkte + 1;
-			setCookie("punkte", punkte);
-			alert("Falsch");
-			
-		}
 			
 		
 </script>
 	
-
+<p style="visibility: hidden;" id="falsch">
+    Falsch
+	</p>
 
 </body>
 </html>
