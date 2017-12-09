@@ -5,13 +5,14 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="generator"
+    <meta charset = "UTF-8" name="generator"
     content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
     <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script>
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
-    <title>!!Registrieren!!</title>
+	<link rel="icon" href="Bilder/favicon.ico">
+    <title>Vergissmeinnicht - Registrieren</title>
   </head>
   <body>
     <!-- <img src="img/LOGO.png" id='logo' alt="Selfhtml"-->
@@ -30,7 +31,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
                              $passwort = $_POST['passwort'];
                              $passwort2 = $_POST['passwort2'];
                               
-
+							//Überprüfung, ob ein Passwort eingegeben wurde und ob sie übereinstimmen 
                              if(strlen($passwort) == 0) {
                              echo 'Bitte ein Passwort angeben<br>';
                              $error = true;
@@ -39,32 +40,36 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
                              echo 'Bitte Passwort wiederholen<br>';
                              $error = true;
                              }
+							 if($passwort != $passwort2) {
+                             echo 'Die Passwörter müssen übereinstimmen<br>';
+                             $error = true;
+                             }
+							 //Überprüfung, ob der Vorname eingegeben wurde
                              if(strlen($user_vorname) == 0) {
                              echo 'Bitte einen Vornamen eingeben<br>';
                              $error = true;
                              }
+							 //Überprüfung, ob der Nachname eingegeben wurde
                              if(strlen($user_nachname) == 0) {
                              echo 'Bitte einen Nachnamen eingeben<br>';
                              $error = true;
                              }
+							 //Überprüfung, ob der Username eingegeben wurde
                               if(strlen($user_username) == 0) {
                              echo 'Bitte einen Username eingeben<br>';
                              $error = true;
                              }
-                             if($passwort != $passwort2) {
-                             echo 'Die Passwörter müssen übereinstimmen<br>';
-                             $error = true;
-                             }
-                             
-                              if(strlen($user_geburtstag) != 0) {
-                             $pattern = '/^(19|20)[0-9]{2}[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])$/';
+                            
+                            //Überprüfung Datum d. Geburtstages auf Format
+                            if(strlen($user_geburtstag) != 0) {
+                            $pattern = '/^(19|20)[0-9]{2}[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])$/';
                             if(preg_match($pattern, $user_geburtstag))
                             {
                                     
                             }
                             else
                             {
-                              echo "Fehlerhaftes Datum Format(yyyy-mm-tt)";
+                              echo "Fehlerhaftes Datum - Format(yyyy-mm-tt)";
                                $error = true;
                             }
                                               }
@@ -76,11 +81,12 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
                             }
                             else
                             {
-                              echo "Fehlerhaftes Datum Format(yyyy-mm-tt)";
+                              echo "Fehlerhaftes Datum - Format(yyyy-mm-tt)";
                                $error = true;
                             }
 
                             }
+							//Gibt es den User schon? 
                              if(!$error) { 
                              $statement = $pdo->prepare("SELECT * FROM heim_user WHERE user_username = :user_username");
                              $result = $statement->execute(array('user_username' => $user_username));
@@ -96,26 +102,30 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
 							$lower=0;
 							$upper=0;
 							$number=0;
-							//Prüfen ob das Passwort mind. 6 Zeichen hat und mindestens einen kleinen & einen großen Buchstaben sowie eine Zahl enthält!
+							//Prüfen ob das Passwort mind. 6 Zeichen hat und mindestens einen kleinen & einen großen Buchstaben sowie eine Zahl enthält
 							if(preg_match('/^[a-zA-Z0-9]{6,}$/', $passwort))
 							{
 								$long=1;
 							}
+							//Prüfung, ob mind. ein kleiner Buchstabe enthalten ist
 							if(preg_match('/[a-z]/', $passwort))
 							{
 							$lower=1;
 							}
+							//Prüfung, ob mind. ein großer Buchstabe enthalten ist
 							if(preg_match('/[A-Z]/', $passwort))
 							{
 								$upper=1;
 							}
+							//Prüfung, ob mind. eine Zahl vorhanden ist
 							if(preg_match('/[0-9]/', $passwort))
 							{
 								$number=1;
 							}
+							//Alles vorhanden --> ok
 							if ($long == 1 && $lower == 1 && $upper == 1 && $number == 1)
 							{
-                   
+								alert("ok");
 							}
 							else
 							{
@@ -129,7 +139,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
                                                     }
                                              }
 							if(strlen($passwort) != 0) {
-								if($passwort == 'Hallo123' && 'Schalke04' && 'Passwort1' && 'Hallo1' && 'Schatz1')
+								if($passwort == 'Hallo123' && 'Schalke04' && 'Passwort1' && 'Hallo1' && 'Schatz1' && 'Schule123'&& 'Starten!'&& '12345'&& '67890')
 								{
 									echo 'Passwort zu einfach bitte geben sie ein anderes ein';
 									$error = true;
