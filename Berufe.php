@@ -6,6 +6,7 @@
   
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 <?php
+//Session User
 session_start();
 if(!isset($_SESSION['id_user'])) {
  die('Bitte zuerst <a href="login.php">einloggen');
@@ -26,7 +27,8 @@ if(!isset($_SESSION['id_user'])) {
 		var cookie = getCookie("berufe");
 		
 	
-		var berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker"];
+		var berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt",
+		"Kammeramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
 		//Wenn der Cookie nicht befüllt wird er neu befüllt.
 		if (cookie != 0)
 		{
@@ -70,7 +72,7 @@ if(!isset($_SESSION['id_user'])) {
 			setCookie("berufe", berufe);
 		
 			
-			if( laenge == 1 )
+			if( laenge <= 10  )
 			{
 			 
 			var punkte = getCookie("punkte");
@@ -78,12 +80,15 @@ if(!isset($_SESSION['id_user'])) {
 			//Cookie löschen
 			setCookie('punkte', '', -1, '/', '.Berufe.php');
 			setCookie('berufe', '', -1, '/', '.Berufe.php');
+			//Punkte vergeben
 			$.get( "zaehlen.php?punkte=" + punkte + "&spiel=berufe");
+			window.location = "start.php"; 
 			}
 			else{
-			window.location.reload();  
+			window.location.reload(); 
 			}
 		}
+		//Wenn es falsch ist wird es angezeigt und ein Punkt zu Fehler addiert
 		function falsch(){
 			var punkte = getCookie("punkte");
 			document.getElementById("falsch").style.visibility = 'visible';
@@ -98,14 +103,32 @@ if(!isset($_SESSION['id_user'])) {
 			
 			
 		}
+		//wählt einen random Beruf aus und gibt zufällig die Begriffe aus
 		function random(berufe){
 			var machen = new Array();
 			machen [0] = ["schweißen", "sägen", "schleifen", "hämmern"];
 			machen [1] = ["fliegen", "schweißen", "schleifen", "schneiden"];
 			machen [2]= ["sägen", "abdecken", "malen", "pinseln"];
 			machen [3] =["anpflanzen", "austauschen", "schweißen", "bohren"];
+			machen [4] =["repariren", "heben", "senken", "befestigen"];
+			machen [5] =["schleifen", "löschen", "helfen", "retten"];
+			machen [6] =["sägen", "Fotos bearbeiten", "fotografieren", "organisieren"];
+			machen [7] =["singen", "Blut abnehemen", "verarzten", "operieren"];
+			machen [8] =["löschen", "bauen", "zeichen", "kontrollieren"];
+			machen [9] =["bringen", "reißen", "bohren", "untersuchen"];
+			machen [10] =["reißen", "aufnehemen", "Filme bearbeiten", "filmen"];
+			machen [11] =["lackieren", "schneiden", "kürzen", "rasieren"];
+			machen [12] =["rasieren", "mischen", "verputzen", "mauern"];
+			machen [13] =["sägen", "transportieren", "fahren", "Gepäck tragen"];
+			machen [14] =["schlafen", "fahren", "schwimmen", "laufen"];
+			machen [15] =["anfeuern", "schützen", "verolfgen", "laufen"];
+			machen [16] =["verfolgen", "schleifen", "erhitzen", "hämmern"];
+			machen [17] =["schützen", "anziehen", "schminekn", "posieren"];
+			machen [18] =["ziehen", "empfehlen", "erklären", "verkaufen"];
+			machen [19] =["mauern", "schrauben", "löten", "verkabeln"];
 			
-			var berufepos = ["Dachdecker", "Schlosser", "Maler", "Mechaniker"];
+			var berufepos = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt",
+		"Kammeramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
 			var berufstelle = Math.floor(Math.random() * berufe.length);
 			var berufToUse = berufe[berufstelle];
 			berufe.splice(berufstelle,1);
@@ -146,24 +169,9 @@ if(!isset($_SESSION['id_user'])) {
 			}
 			
 			
-<<<<<<< HEAD
-=======
-			function falsch(){
-		document.write('<h1>Falsch</h1>');
-			var punkte = getCookie("punkte");
-			
-			punkte.toString()
-			var punkte = Math.floor(punkte);
-			alert(punkte);
-			
-			
-			
-			punkte = punkte + 1;
-			setCookie("punkte", punkte);
-			alert("Falsch");
-			
-		}
->>>>>>> 9dc9a852ce54c6cc92d5b165b6b68a12800dc6d7
+
+	
+
 			
 		
 </script>
