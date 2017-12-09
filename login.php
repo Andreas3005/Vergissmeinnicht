@@ -14,9 +14,10 @@ if(isset($_GET['login'])) {
  if ($user !== false && password_verify($user_passwort, $user['user_passwort'])) {
  $_SESSION['id_user'] = $user['id_user'];
  $_SESSION['user_username'] = $user['user_username'];
- header("Location: start.php");
+ header("Location: Start.php");
  } else {
- $errorMessage = "<b> Username oder Passwort war ungültig</b><br>";
+ $message = "Bitte Username und Passwort eingeben!";
+ echo "<script type='text/javascript'>alert('$message');</script>";
  }
  
 }
@@ -29,14 +30,13 @@ if(isset($_GET['login'])) {
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script> 
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
-  <title>Login</title> 
+  <link rel="icon" href="Bilder/favicon.ico">
+  <title>Vergissmeinnicht - Login</title>
 </head> 
 <body>
  
 <?php 
-if(isset($errorMessage)) {
- echo $errorMessage;
-}
+
 ?>
 
 <a href="login.php"> <img src="Bilder/LOGO.png" id="logo"> </a>

@@ -8,7 +8,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['id_user'])) {
- die('Bitte zuerst <a href="login.php">einloggen</a>');
+ die('Bitte zuerst <a href="login.php">einloggen');
 }
 ?>
 
@@ -70,7 +70,7 @@ if(!isset($_SESSION['id_user'])) {
 			setCookie("berufe", berufe);
 		
 			
-			if( 1 == laenge )
+			if( laenge == 1 )
 			{
 			 
 			var punkte = getCookie("punkte");
@@ -146,6 +146,24 @@ if(!isset($_SESSION['id_user'])) {
 			}
 			
 			
+<<<<<<< HEAD
+=======
+			function falsch(){
+		document.write('<h1>Falsch</h1>');
+			var punkte = getCookie("punkte");
+			
+			punkte.toString()
+			var punkte = Math.floor(punkte);
+			alert(punkte);
+			
+			
+			
+			punkte = punkte + 1;
+			setCookie("punkte", punkte);
+			alert("Falsch");
+			
+		}
+>>>>>>> 9dc9a852ce54c6cc92d5b165b6b68a12800dc6d7
 			
 		
 </script>
