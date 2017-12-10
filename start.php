@@ -29,25 +29,24 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="Start.php">Home
+              <a class="nav-link" href="Start.php">Start
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="UeberUns.php">About</a>
+              <a class="nav-link" href="UeberUns.php">Über uns</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Services.php">Services</a>
+              <a class="nav-link" href="Services.php">Leistungen</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Kontakt.php">Contact</a>
+              <a class="nav-link" href="Kontakt.php">Kontakt</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Page Content -->
     <div class="container">
 
       <div class="row">
@@ -99,14 +98,12 @@
             </div>
           </div>
         </div>
-      <!-- /.row -->
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
+  
+    <footer class="footer">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; HTL-Traun_Vergissmeinnicht 2017</p>
+        <span class="text-muted">Made with &hearts; by Andreas Krentl </span>
       </div>
-      <!-- /.container -->
     </footer>
   </body>
 </html>
