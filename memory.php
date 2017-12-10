@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Memory Game</title>
-  
-  
-  
       <link rel="stylesheet" href="css/stylem.css">
-
   
 </head>
 
@@ -46,8 +42,6 @@
 
 	</div>
 </html>
-  
     <script  src="js/index.js"></script>
-
 </body>
 </html>

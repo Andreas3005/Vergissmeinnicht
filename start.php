@@ -1,29 +1,112 @@
-<html> 
-<head>
+<!DOCTYPE html>
+<html lang="en">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"></script> 
-	<link href="css/styles.css" rel="stylesheet" type="text/css">
-  <link rel="icon" href="Bilder/favicon.ico">
-  <title>Vergissmeinnicht - Start</title>
-</head> 
-<?php
-session_start();
-if(!isset($_SESSION['id_user'])) {
- die('Bitte zuerst <a href="login.php">einloggen</a>');
-}
-?>
-<form action="berufe.php">
-	<label id ="Spiel_1"> Spiel_1 </label>
-    <input type="submit" value="Start" />
-</form>
-<form action="berufe.php">
-	<label id ="Spiel_2"> Spiel_2 </label>
-    <input type="submit" value="Start" />
-</form>
-<form action="berufe.php">
-	<label id ="Spiel_3"> Spiel_3 </label>
-    <input type="submit" value="Start" />
-</form>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Andreas Krentl">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <title>VGMN - Startseite</title>
+    <link rel="icon" href="Bilder/favicon.ico">
+   
+
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Vergissmeinnicht Startseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="Start.php">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="UeberUns.php">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Services.php">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Kontakt.php">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-6 portfolio-item">
+          <div class="card h-100">
+            <a href="berufe.php"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="berufe.php">Was macht er nicht?</a>
+              </h4>
+              <p class="card-text"><b>Beschreibung: </b> In diesem Spiel müssen Sie die Tätigkeit auswählen, welche der dagestellte Beruf normalerweise nicht macht. <br />
+								   <b>Anleitung:</b> Wählen sie die Tätigkeit aus, welche die Person auf dem Foto nicht macht. Hierzu klicken sie auf den jeweiligen Button.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 portfolio-item">
+          <div class="card h-100">
+            <a href="memory.php"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="memory.php">Memory</a>
+              </h4>
+              <p class="card-text"><b>Beschreibung:</b> Ein Spiel das jeder kennt. Memory. Decken Sie die jeweils gleichen Paare auf, möglichst ohne Fehler. <br />
+								   <b>Anleitung: </b> Starten Sie zunächst das Spiel. Danach decke eine Karte auf, danach eine weitere. Suchen Sie möglichst viele Paare!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 portfolio-item">
+          <div class="card h-100">
+            <a href="dragdrop.php"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="dragdrop.php">Drag and Drop</a>
+              </h4>
+              <p class="card-text"><b>Beschreibung: </b> Ein Spiel, bei dem es das Ziel ist, einen Lückentext zu vervollständigen. </br >
+								   <b>Anleitung: </b> Ziehen Sie die Wörter die unten aufgelistet sind, in die entsprechende Lücke.</p>
+            </div>
+          </div>
+        </div>
+		
+        <div class="col-lg-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#"> Platzhalter für Spiel 4</a>
+              </h4>
+              <p class="card-text">Hier könnte eine Beschreibung und eine Anleitung stehen...</p>
+            </div>
+          </div>
+        </div>
+      <!-- /.row -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; HTL-Traun_Vergissmeinnicht 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+  </body>
 </html>

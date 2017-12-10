@@ -1,4 +1,39 @@
 <html>
+<title>VGMN - Berufe</title>
+<link rel="icon" href="Bilder/favicon.ico">
+<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+<body>
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Vergissmeinnicht "Was macht er nicht?"</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="Start.php">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="UeberUns.php">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Services.php">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Kontakt.php">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</body>
 <Meta charset = "UTF-8">
  <head>
      <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -65,7 +100,7 @@ if(!isset($_SESSION['id_user'])) {
 		}
 		
 	
-		//Wird ausgeführt wenn die Richtige eingabe gemacht wurde
+		//Wird ausgeführt wenn die Richtige Eingabe gemacht wurde
 		function richtig(){
 			
 			
@@ -88,7 +123,7 @@ if(!isset($_SESSION['id_user'])) {
 			window.location.reload(); 
 			}
 		}
-		//Wenn es falsch ist wird es angezeigt und ein Punkt zu Fehler addiert
+		//Bei einem Fehler wird dieser angezeit und dem Fehler-Counter ein Punkt hinzugefügt
 		function falsch(){
 			var punkte = getCookie("punkte");
 			document.getElementById("falsch").style.visibility = 'visible';
@@ -103,7 +138,7 @@ if(!isset($_SESSION['id_user'])) {
 			
 			
 		}
-		//wählt einen random Beruf aus und gibt zufällig die Begriffe aus
+		//Ein Beruf wird zufällig ausgewählt und dessen Begriffe ebenfalls zufällig ausgegeben
 		function random(berufe){
 			var machen = new Array();
 			machen [0] = ["schweißen", "sägen", "schleifen", "hämmern"];
@@ -141,11 +176,7 @@ if(!isset($_SESSION['id_user'])) {
             
 			
 			for(var i = 0; a <= 3; i++)
-			{ 
-		
-		
-				
-				
+			{ 	
 			var machenstelle = Math.floor(Math.random() * 4);	
 			var valueToUse = machen[position] [machenstelle];
 				
@@ -166,19 +197,11 @@ if(!isset($_SESSION['id_user'])) {
   
 				}
 	
-			}
-			
-			
-
-	
-
-			
-		
+			}		
 </script>
 	
 <p style="visibility: hidden;" id="falsch">
     Falsch
 	</p>
 
-</body>
 </html>

@@ -18,16 +18,16 @@
             });
         });
     </script>
-    <link type="text/css" rel="stylesheet" href="css/jdropwords.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="css/jdropwords.css" />
 </head>
 <body>
-    <h1 style="text-align: center">Fill the blanks</h1>
+    <h1 style="text-align: center">Setze die richtigen Wörter!</h1>
     <div class="jdropwords">
         <div class="blanks">
-            <p>Hallo, ich <span class="blank" id="1"></span> Christian</p>
+            <p>Hallo, ich <span class="blank" id="1"></span> Andreas</p>
             <p><span class="blank" id="3"></span> Ihnen?</p>
             <p>Wo <span class="blank" id="5"></span> Sie ?</p>
-            <p>Ich <span class="blank" id="7"></span>in Marseille geboren <span class="blank" id="9"></span> Paris.</p>
+            <p>Ich <span class="blank" id="7"></span>in Wels geboren <span class="blank" id="9"></span> Linz-Land.</p>
         </div>
         <ul class="words">
             <li class="word" id="2">bin</li>
