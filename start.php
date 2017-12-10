@@ -1,6 +1,12 @@
 <!DOCTYPE html>
+<?php
+//Session User
+session_start();
+if(!isset($_SESSION['id_user'])) {
+ die('Bitte zuerst <a href="login.php">einloggen');
+}
+?>
 <html lang="en">
-
   <head>
 
     <meta charset="utf-8">
