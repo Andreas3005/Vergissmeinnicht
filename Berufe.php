@@ -1,45 +1,23 @@
 <html>
+<Meta charset = "UTF-8">
 <title>VGMN - Berufe</title>
 <link rel="icon" href="Bilder/favicon.ico">
 <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 <body>
   <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Vergissmeinnicht "Was macht er nicht?"</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <a class="navbar-brand" href="#"> Vergissmeinnicht "Was macht er nicht?"</a>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="Start.php">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="UeberUns.php">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Services.php">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Kontakt.php">Contact</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
 </body>
-<Meta charset = "UTF-8">
  <head>
-     <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css">
-
-  
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 <?php
 //Session User
 session_start();
@@ -64,7 +42,7 @@ if(!isset($_SESSION['id_user'])) {
 	
 		var berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt",
 		"Kammeramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
-		//Wenn der Cookie nicht befüllt wird er neu befüllt.
+		//Wenn der Cookie nicht befüllt ist, wird er neu befüllt.
 		if (cookie != 0)
 		{
 			
@@ -117,7 +95,7 @@ if(!isset($_SESSION['id_user'])) {
 			setCookie('berufe', '', -1, '/', '.Berufe.php');
 			//Punkte vergeben
 			$.get( "zaehlen.php?punkte=" + punkte + "&spiel=berufe");
-			window.location = "start.php"; 
+			window.location = "BerufeFinish.php"; 
 			}
 			else{
 			window.location.reload(); 
@@ -145,32 +123,31 @@ if(!isset($_SESSION['id_user'])) {
 			machen [1] = ["fliegen", "schweißen", "schleifen", "schneiden"];
 			machen [2]= ["sägen", "abdecken", "malen", "pinseln"];
 			machen [3] =["anpflanzen", "austauschen", "schweißen", "bohren"];
-			machen [4] =["repariren", "heben", "senken", "befestigen"];
+			machen [4] =["reparieren", "heben", "senken", "befestigen"];
 			machen [5] =["schleifen", "löschen", "helfen", "retten"];
 			machen [6] =["sägen", "Fotos bearbeiten", "fotografieren", "organisieren"];
 			machen [7] =["singen", "Blut abnehemen", "verarzten", "operieren"];
 			machen [8] =["löschen", "bauen", "zeichen", "kontrollieren"];
 			machen [9] =["bringen", "reißen", "bohren", "untersuchen"];
-			machen [10] =["reißen", "aufnehemen", "Filme bearbeiten", "filmen"];
+			machen [10] =["reißen", "aufnehmen", "Filme bearbeiten", "filmen"];
 			machen [11] =["lackieren", "schneiden", "kürzen", "rasieren"];
 			machen [12] =["rasieren", "mischen", "verputzen", "mauern"];
 			machen [13] =["sägen", "transportieren", "fahren", "Gepäck tragen"];
 			machen [14] =["schlafen", "fahren", "schwimmen", "laufen"];
-			machen [15] =["anfeuern", "schützen", "verolfgen", "laufen"];
+			machen [15] =["anfeuern", "schützen", "verfolgen", "laufen"];
 			machen [16] =["verfolgen", "schleifen", "erhitzen", "hämmern"];
-			machen [17] =["schützen", "anziehen", "schminekn", "posieren"];
+			machen [17] =["schützen", "anziehen", "schminken", "posieren"];
 			machen [18] =["ziehen", "empfehlen", "erklären", "verkaufen"];
 			machen [19] =["mauern", "schrauben", "löten", "verkabeln"];
 			
-			var berufepos = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt",
-		"Kammeramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
+			var berufepos = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt","Kammeramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
 			var berufstelle = Math.floor(Math.random() * berufe.length);
 			var berufToUse = berufe[berufstelle];
 			berufe.splice(berufstelle,1);
 			
 			var position = berufepos.indexOf(berufToUse);
 			document.write("<img src='Bilder/Berufe/" + berufToUse + ".jpg' id='logo'>");
-			document.write("<h1 id='Login'>Was macht der Beruf " + berufToUse + " nicht?</h1>");
+			document.write("<h1 id='Login'>Was macht der Beruf " + '"' + berufToUse + '"' + " nicht?</h1>");
 			var a = 0;
 			var notdouble = ["", "", "", ""];
             
@@ -186,10 +163,10 @@ if(!isset($_SESSION['id_user'])) {
 					a++;
 						if(machenstelle == 0)
 						{
-							document.write('<INPUT TYPE="button"  value="' + valueToUse + '" id="Login" onClick="richtig();">');
+							document.write('<INPUT TYPE="button" class= "btn btn-dark" value="' + valueToUse + '" id="Login" onClick="richtig();">');
 						}
 						else{
-							document.write('<INPUT TYPE="button" value="' + valueToUse + '" id="Login" onClick="falsch();">');
+							document.write('<INPUT TYPE="button" class= "btn btn-dark" value="' + valueToUse + '" id="Login" onClick="falsch();">');
 						}
 			
 					}
