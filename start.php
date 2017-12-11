@@ -58,10 +58,10 @@ if(!isset($_SESSION['id_user'])) {
       <div class="row">
         <div class="col-lg-6 portfolio-item">
           <div class="card h-100">
-            <a href="berufe.php"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="Berufe.php"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="berufe.php">Was macht er nicht?</a>
+                <a href="Berufe.php">Was macht er nicht?</a>
               </h4>
               <p class="card-text"><b>Beschreibung: </b> In diesem Spiel müssen Sie die Tätigkeit auswählen, welche der dagestellte Beruf normalerweise nicht macht. <br />
 								   <b>Anleitung:</b> Wählen sie die Tätigkeit aus, welche die Person auf dem Foto nicht macht. Hierzu klicken sie auf den jeweiligen Button.</p>

@@ -1,5 +1,6 @@
 <html>
 <Meta charset = "UTF-8">
+<!-- Titel, Favicon und Headline -->
 <title>VGMN - Berufe</title>
 <link rel="icon" href="Bilder/favicon.ico">
 <script src="js/jquery.min.js"></script>
@@ -18,6 +19,7 @@
     </nav>
 </body>
  <head>
+ 
 <?php
 //Session User
 session_start();
@@ -26,8 +28,6 @@ if(!isset($_SESSION['id_user'])) {
 }
 ?>
 
-
- 
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 		//document.write('document.getElementById("falsch").style.display = "none";');
@@ -40,8 +40,7 @@ if(!isset($_SESSION['id_user'])) {
 		var cookie = getCookie("berufe");
 		
 	
-		var berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt",
-		"Kammeramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
+		var berufe = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt","Kameramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
 		//Wenn der Cookie nicht befüllt ist, wird er neu befüllt.
 		if (cookie != 0)
 		{
@@ -107,9 +106,7 @@ if(!isset($_SESSION['id_user'])) {
 			document.getElementById("falsch").style.visibility = 'visible';
 			punkte.toString()
 			var punkte = Math.floor(punkte);
-			
-			
-			
+		
 			
 			punkte = punkte + 1;
 			setCookie("punkte", punkte);
@@ -140,14 +137,14 @@ if(!isset($_SESSION['id_user'])) {
 			machen [18] =["ziehen", "empfehlen", "erklären", "verkaufen"];
 			machen [19] =["mauern", "schrauben", "löten", "verkabeln"];
 			
-			var berufepos = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt","Kameramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
+			var berufepos = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt", "Kameramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
 			var berufstelle = Math.floor(Math.random() * berufe.length);
 			var berufToUse = berufe[berufstelle];
 			berufe.splice(berufstelle,1);
 			
 			var position = berufepos.indexOf(berufToUse);
-			document.write("<img src='Bilder/Berufe/" + berufToUse + ".jpg' id='logo'>");
-			document.write("<h1 id='Login'>Was macht der Beruf " + '"' + berufToUse + '"' + " nicht?</h1>");
+			document.write("<img src='Bilder/Berufe/" + berufToUse + ".jpg' id='BerufeBilder'>");
+			document.write("<h1 id='Login'><b>Was macht der Beruf " + '"' + berufToUse + '"' + " nicht?</b></h1>");
 			var a = 0;
 			var notdouble = ["", "", "", ""];
             
@@ -178,7 +175,7 @@ if(!isset($_SESSION['id_user'])) {
 </script>
 	
 <p style="visibility: hidden;" id="falsch">
-    Falsch
+    Leider falsch..
 	</p>
 
 </html>
