@@ -1,5 +1,6 @@
 <html>
 <Meta charset = "UTF-8">
+<meta http-equiv="refresh" content="5; URL=Start.php">
 <title>VGMN - Berufe - Ende</title>
 <link rel="icon" href="Bilder/favicon.ico">
 <script src="js/jquery.min.js"></script>
@@ -37,5 +38,6 @@ setInterval(blinkenderText, 1000);
     </nav>
 	
 	<p class="blinking">SIE HABEN ES GESCHAFFT.</p>
+	Sie werden in Kürze weitergeleitet. <br />Alternativ drücken Sie <a href="Start.php">hier</a> um zurück zur Hauptseite zu gelangen.
 </body>
 </html>
