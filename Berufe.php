@@ -140,7 +140,7 @@ if(!isset($_SESSION['id_user'])) {
 			machen [18] =["ziehen", "empfehlen", "erklären", "verkaufen"];
 			machen [19] =["mauern", "schrauben", "löten", "verkabeln"];
 			
-			var berufepos = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt","Kammeramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
+			var berufepos = ["Dachdecker", "Schlosser", "Maler", "Mechaniker", "Kranfahrer", "Feuerwehrmann", "Fotograf", "Arzt", "Architekt" , "Zahnarzt","Kameramann", "Friseur", "Bauarbeiter", "Taxifahrer", "Sportler", "Fußballer", "Schmied", "Model", "Verkäufer", "Elektriker" ];
 			var berufstelle = Math.floor(Math.random() * berufe.length);
 			var berufToUse = berufe[berufstelle];
 			berufe.splice(berufstelle,1);
