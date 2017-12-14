@@ -9,7 +9,7 @@ jQuery.fn.jDropWords = function(options) {
     beforeDrop : null,
     afterDrop : null,
     afterCorrection : null,
-    submitAjax : false,
+    submitAjax : true,
     submitAjaxUrl : "",
     submitAjaxExtraParams : {},
   };

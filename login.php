@@ -39,7 +39,7 @@ if(isset($_GET['login'])) {
 
 ?>
 
-<a href="login.php"> <img src="Bilder/LOGO.png" id="logo"> </a>
+<a href="login.php"> <img src="Bilder/LOGO2.png" id="logo"> </a>
 
 <form action="?login=1" method="post" id="Username"> <br>
 <p id="Username" align="center"><b> Username </b></p> 
