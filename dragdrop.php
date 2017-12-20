@@ -17,6 +17,9 @@
                  }
             });
         });
+		alert(test);
+		//$.get( "zaehlen.php?punkte=" + punkte + "&spiel=berufe");
+		
     </script>
     <link type="text/css" rel="stylesheet" href="css/jdropwords.css" />
 </head>

@@ -1,5 +1,5 @@
 jQuery.fn.jDropWords = function(options) {
-
+var score = 0;
   // Default settings.
   var defaults = {
     hoverClass : "drop-hover",
@@ -47,7 +47,7 @@ jQuery.fn.jDropWords = function(options) {
    */
   function getDroppedElement(srcElt) {
     var html = '<div class="' + settings.droppedClass + ' clearfix" rel="' + srcElt.attr('id') + '">' +
-      '<span>' + srcElt.html() + '</span>' +
+      '<span>' + srcElt.html() + '</span>' 
       '<div class="action"><a href="#" class="close">x</a></div>' +
       '</div>';
     var container = $(html);
@@ -199,8 +199,8 @@ jQuery.fn.jDropWords = function(options) {
    * @param jQuery Obj activity appContainer.
    *   the container for the app.
    */
-  function checkAnswers(answers, appContainer) {
-    var score = 0;
+  function checkAnswers(answers, appContainer, score) {
+    
     var nbQuestions = 0;
     var animUpDuration = 75;
     var animDownDuration = 100;
@@ -217,6 +217,8 @@ jQuery.fn.jDropWords = function(options) {
       if (actual == expected) {
         className = settings.successClass;
         score ++;
+	
+	
       }
 
       // For all filled blanks, add a small animation before adding the class.
@@ -254,6 +256,7 @@ jQuery.fn.jDropWords = function(options) {
       }
       postParams = $.extend( {}, postParams, settings.submitAjaxExtraParams );
       $.post(settings.submitAjaxUrl, postParams);
+
     }
   }
 
@@ -264,4 +267,5 @@ jQuery.fn.jDropWords = function(options) {
     var appContainer = $(this);
     init(appContainer);
   });
+  
 };
