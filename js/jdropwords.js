@@ -9,7 +9,7 @@ var score = 0;
     beforeDrop : null,
     afterDrop : null,
     afterCorrection : null,
-    submitAjax : false,
+    submitAjax : true,
     submitAjaxUrl : "",
     submitAjaxExtraParams : {},
   };
