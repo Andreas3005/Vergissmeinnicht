@@ -14,6 +14,8 @@ var score = 0;
     submitAjaxExtraParams : {},
   };
 
+
+
   var settings = $.extend( {}, defaults, options );
 
   /**
