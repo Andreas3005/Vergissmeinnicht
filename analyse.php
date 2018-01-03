@@ -1,11 +1,21 @@
 <html>
-<canvas id="myChart" width="5%" height="2%"></canvas>
+<canvas id="myChart" width="3%" height="1%"></canvas>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <?php
 
 
 $conn = mysqli_connect("localhost", "root", "", "regenbogenheim");
 $result = $conn->query("SELECT score_punkte, score_datum FROM heim_score");
+
+/*$abfrage = mysqli_query($conn, "SELECT score_punkte FROM heim_score");
+$ergebnis = mysqli_fetch_object($abfrage);
+$katzenwunsch = $ergebnis->count;*/
+
+$abfrage = mysqli_query($conn, "SELECT score_punkte FROM heim_score");
+$ergebnis = mysqli_fetch_object($abfrage);
+$arr = mysql_fetch_row($abfrage);
+/*echo $arr[2];
+
 $outp = array();
 while($row = mysqli_fetch_assoc($result))
 {
@@ -14,6 +24,10 @@ while($row = mysqli_fetch_assoc($result))
 
 
 echo json_encode($outp);
+for($i=0; $i < 6; $i++) {
+    $a = $i *2;
+	echo $katzenwunsch;
+}*/
 
 ?>
 <script>
