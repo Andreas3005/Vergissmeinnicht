@@ -58,7 +58,7 @@ if(!isset($_SESSION['id_user'])) {
       <div class="row">
         <div class="col-lg-6 portfolio-item">
           <div class="card h-100">
-            <a href="Berufe.php"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="Berufe.php"><img class="card-img-top" src="Bilder/Start/wasmachternicht.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="Berufe.php">Was macht er nicht?</a>
@@ -70,7 +70,7 @@ if(!isset($_SESSION['id_user'])) {
         </div>
         <div class="col-lg-6 portfolio-item">
           <div class="card h-100">
-            <a href="memory.php"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="memory.php"><img class="card-img-top" src="Bilder/Start/memory.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="memory.php">Memory</a>
@@ -82,7 +82,7 @@ if(!isset($_SESSION['id_user'])) {
         </div>
         <div class="col-lg-6 portfolio-item">
           <div class="card h-100">
-            <a href="dragdrop.php"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="dragdrop.php"><img class="card-img-top" src="Bilder/Start/dragndrop.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="dragdrop.php">Drag and Drop</a>
@@ -95,7 +95,7 @@ if(!isset($_SESSION['id_user'])) {
 		
         <div class="col-lg-6 portfolio-item">
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="#"><img class="card-img-top" src="Bilder/Start/baldverfuegbar.png" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
                 <a href="#"> Platzhalter für Spiel 4</a>
