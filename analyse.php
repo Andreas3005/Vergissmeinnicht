@@ -5,7 +5,7 @@
 
 
 $conn = mysqli_connect("localhost", "root", "", "regenbogenheim");
-$result = $conn->query("SELECT score_punkte FROM heim_score");
+$result = $conn->query("SELECT score_punkte, score_datum FROM heim_score");
 $outp = array();
 while($row = mysqli_fetch_assoc($result))
 {
