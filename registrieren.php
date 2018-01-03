@@ -125,7 +125,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=regenbogenheim', 'root', '');
 							//Alles vorhanden --> ok
 							if ($long == 1 && $lower == 1 && $upper == 1 && $number == 1)
 							{
-								alert("ok");
+								echo("ok");
 							}
 							else
 							{
