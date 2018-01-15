@@ -40,10 +40,10 @@ if(!isset($_SESSION['id_user'])) {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="UeberUns.php">Über uns</a>
+              <a class="nav-link" href="analyse.php">Analyse</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Services.php">Leistungen</a>
+              <a class="nav-link" href="About.php">Über uns</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="Kontakt.php">Kontakt</a>

@@ -1,23 +1,60 @@
 <html>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <head>
-    <title>Formular mit Dropdown - Liste</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <title>VGMN-Analyseverfahren</title>
+	<link rel="icon" href="Bilder/favicon.ico">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 </head>
 <body>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#" align="left">Vergissmeinnicht Analyseverfahren</a>
+        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="Start.php">Start
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="analyse.php">Analyse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="About.php">Über uns</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Kontakt.php">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	
 
 <?php
 $conn = mysqli_connect("localhost", "root", "", "regenbogenheim");
 ?>
 <form action="analyse.php" method="post">
- Wähle das Spiel:
+ Ich will die Daten des Spiels 
 <select name="Spiele">
    <option value="berufe">Berufe</option>
   
  </select>
-<br>
-User:
+vom Patienten
 <!-- die ausgewählten Elemente werden in einem Array gespeichert -->
 <select name="User[]" multiple="multiple">
 <?php
@@ -35,8 +72,8 @@ $abfrage_user = mysqli_query($conn, "SELECT id_user, user_vorname , user_nachnam
    
 ?>
 </select>
-<br>
-<input type="submit" name="absenden" value="Liste absenden">
+analysieren.
+<input type="submit" class ="btn btn-dark" name="absenden" value="Los gehts!">
 </form>
     <?php
    //Mit isset() wird überprüft ob einer Variablen bereits
@@ -113,9 +150,9 @@ var chart = new Chart(ctx, {
 		}
 		 ?>],
         datasets: [{
-            label: "My First dataset",
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            label: "Analysegraph",
+            backgroundColor: 'rgb(0,0,139)',
+            borderColor: 'rgb(0,0,139)',
             data: [0, 10, 5, 2, 20, 30, 45],
         }]
     },
@@ -125,5 +162,10 @@ var chart = new Chart(ctx, {
 });
 </script>
  </body>
+ <footer class="footer">
+      <div class="container">
+        <span class="text-muted" align ="left">Made with &hearts; by Tobias Greinecker & Andreas Krentl </span>
+      </div>
+    </footer>
 
 </html>
