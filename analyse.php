@@ -47,6 +47,7 @@
 
 <?php
 $conn = mysqli_connect("localhost", "root", "", "regenbogenheim");
+setlocale(LC_TIME, "de_DE");
 ?>
 <form action="analyse.php" method="post">
  Ich will die Daten des Spiels 
@@ -58,6 +59,7 @@ vom Patienten
 <!-- die ausgewählten Elemente werden in einem Array gespeichert -->
 <select name="User[]" multiple="multiple">
 <?php
+
 $abfrage_user = mysqli_query($conn, "SELECT id_user, user_vorname , user_nachname  FROM heim_user ORDER BY user_nachname ASC;");
 				if ( ! $abfrage_user )
 				{
@@ -92,7 +94,7 @@ analysieren.
             foreach ($_POST['User'] as $value) {
                 echo $value."<br>";
 			
-				$abfrage = mysqli_query($conn, "SELECT score_punkte, score_datum  FROM heim_score WHERE id_user = $value and score_name = '$values' ORDER BY score_datum DESC; ");
+				$abfrage = mysqli_query($conn, "SELECT score_punkte, date_format(score_datum,'%d.%m.%Y %H:%i:%s ') as score_datum FROM heim_score WHERE id_user = $value and score_name = '$values' ORDER BY score_datum DESC; ");
 				if ( ! $abfrage )
 				{
 				die('Ungültige Abfrage: ' . mysqli_error());
@@ -101,9 +103,13 @@ analysieren.
 				echo '<table border="1">';
 				while ($zeile = mysqli_fetch_array( $abfrage, MYSQLI_ASSOC ))
 				{
+					
+    
+					
 				echo "<tr>";
 				echo "<td>". $zeile['score_punkte'] . "</td>";
-				echo "<td>". $zeile['score_datum'] . "</td>";
+		
+				echo "<td>".  $zeile['score_datum'].  "</td>";
 
 				echo "</tr>";
 				}
@@ -126,12 +132,12 @@ var chart = new Chart(ctx, {
         labels: [	<?php
 		if (isset($_POST['absenden'])){
 		if (isset($_POST['User'])){
-			foreach ($_POST['User'] as $value) {
-				}
+			
+		$i = 0;
             foreach ($_POST['User'] as $value) {
                 
 			
-				$abfrage = mysqli_query($conn, "SELECT score_punkte, score_datum  FROM heim_score WHERE id_user = $value and score_name = '$values' ORDER BY score_datum DESC; ");
+				$abfrage = mysqli_query($conn, "SELECT score_punkte,  date_format(score_datum,'%d%m%Y%H%i%s') as score_datum  FROM heim_score WHERE id_user = $value and score_name = '$values' ORDER BY score_datum DESC; ");
 				if ( ! $abfrage )
 				{
 				die('Ungültige Abfrage: ' . mysqli_error());
@@ -140,12 +146,14 @@ var chart = new Chart(ctx, {
 			
 				while ($zeile = mysqli_fetch_array( $abfrage, MYSQLI_ASSOC ))
 				{
-		
-				echo $zeile['score_punkte'];
-				
-				
+				echo $zeile['score_datum'] ;
+				if ($i < 2)
+				{
+					echo ", ";
 				}
+				$i = $i + 1;
 			}
+		}
 		}
 		}
 		 ?>],
