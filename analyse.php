@@ -172,7 +172,7 @@ var chart = new Chart(ctx, {
  </body>
  <footer class="footer">
       <div class="container">
-        <span class="text-muted" align ="left">Made with &hearts; by Tobias Greinecker & Andreas Krentl </span>
+        <span class="text-muted" align ="left">Made with &hearts; by Tobias Greinecker & Andreas Krentl & Thomas Krenn </span>
       </div>
     </footer>
 
