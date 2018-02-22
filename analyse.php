@@ -89,10 +89,10 @@ analysieren.
 		$value = 0;
 		$values = "";
 		$values = $_POST['Spiele'];
-		echo $values."<br>";
+		//echo $values."<br>";
          if (isset($_POST['User'])){
             foreach ($_POST['User'] as $value) {
-                echo $value."<br>";
+                //echo $value."<br>";
 			
 				$abfrage = mysqli_query($conn, "SELECT score_punkte, date_format(score_datum,'%d.%m.%Y %H:%i:%s ') as score_datum FROM heim_score WHERE id_user = $value and score_name = '$values' ORDER BY score_datum DESC; ");
 				if ( ! $abfrage )
