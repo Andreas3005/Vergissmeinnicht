@@ -122,7 +122,7 @@ analysieren.
 	 
 	 <canvas id="myChart" width="20%" height="15%"></canvas>
 	 
-	 <script>var ctx = document.getElementById('myChart').getContext('2d');
+	 <script>/*var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
@@ -167,7 +167,7 @@ var chart = new Chart(ctx, {
 
     // Configuration options go here
     options: {}
-});
+});*/
 </script>
  </body>
  <footer class="footer">

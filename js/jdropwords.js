@@ -10,7 +10,7 @@ var score = 0;
     afterDrop : null,
     afterCorrection : null,
     submitAjax : true,
-    submitAjaxUrl : "",
+    submitAjaxUrl : "dragdrop.php",
     submitAjaxExtraParams : {},
   };
 
@@ -253,11 +253,14 @@ var score = 0;
     // Submit results through ajax (post).
     if (settings.submitAjax) {
       var postParams = {
-        score : score,
+        score : "12",
         nbqst : nbQuestions
       }
       postParams = $.extend( {}, postParams, settings.submitAjaxExtraParams );
-      $.post(settings.submitAjaxUrl, postParams);
+      $.post(settings.submitAjaxUrl, postParams );
+	  /*request.open('post', 'dragdrop.php', true);
+	request.setRequestHeader('Content-Type', 'application/x-www-formurlencoded');
+	  request.send('daten='+score);*/
 
     }
   }

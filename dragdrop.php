@@ -17,10 +17,21 @@
                  }
             });
         });
-		alert(test);
+	
 		//$.get( "zaehlen.php?punkte=" + punkte + "&spiel=berufe");
 		
+		
     </script>
+	<?php
+	if(isset($_POST['score'])){
+   $email = $_POST['variable'] ;
+	echo $email;
+
+	print_r($_POST);}
+	
+	echo "test";
+	
+	?>
     <link type="text/css" rel="stylesheet" href="css/jdropwords.css" />
 </head>
 <body>
