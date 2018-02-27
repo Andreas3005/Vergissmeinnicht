@@ -9,11 +9,19 @@ if(isset($_GET['login'])) {
  $statement = $pdo->prepare("SELECT * FROM heim_user WHERE user_username = :user_username");
  $result = $statement->execute(array('user_username' => $user_username));
  $user = $statement->fetch();
- 
+  $statement2 = $pdo->prepare("SELECT * FROM heim_user WHERE user_rfid = :user_rfid");
+ $result2 = $statement2->execute(array('user_rfid' => '12345678'));
+ $user2 = $statement2->fetch();
 
- if ($user !== false && password_verify($user_passwort, $user['user_passwort'])) {
+ if ($user !== false && password_verify($user_passwort, $user['user_passwort'])|| $user2 !== false ) {
  $_SESSION['id_user'] = $user['id_user'];
  $_SESSION['user_username'] = $user['user_username'];
+	if($user2 !== false)
+	{
+		 $_SESSION['id_user'] = $user2['id_user'];
+		$_SESSION['user_username'] = $user2['user_username'];
+	}
+	
  header("Location: Start.php");
  } else {
  $message = "Bitte Username und Passwort eingeben!";

@@ -49,13 +49,8 @@
 $conn = mysqli_connect("localhost", "root", "", "regenbogenheim");
 setlocale(LC_TIME, "de_DE");
 ?>
-<form action="analyse.php" method="post">
- Ich will die Daten des Spiels 
-<select name="Spiele">
-   <option value="berufe">Berufe</option>
-  
- </select>
-vom Patienten
+<form action="rfid.php" method="post">
+User hinzufügen
 <!-- die ausgewählten Elemente werden in einem Array gespeichert -->
 <select name="User[]" multiple="multiple">
 <?php
@@ -74,7 +69,7 @@ $abfrage_user = mysqli_query($conn, "SELECT id_user, user_vorname , user_nachnam
    
 ?>
 </select>
-analysieren.
+
 <input type="submit" class ="btn btn-dark" name="absenden" value="Los gehts!">
 </form>
     <?php
@@ -83,92 +78,30 @@ analysieren.
    if (isset($_POST['absenden'])){
       
 	   	
-		require_once ('analyse.php');
+		require_once ('rfid.php');
         //es werden alle Werte des Arrays mit einer foreach - 
         //Schleife ausgegeben
 		$value = 0;
-		$values = "";
-		$values = $_POST['Spiele'];
-		//echo $values."<br>";
+	
+		
          if (isset($_POST['User'])){
             foreach ($_POST['User'] as $value) {
-                //echo $value."<br>";
+          
 			
-				$abfrage = mysqli_query($conn, "SELECT score_punkte, date_format(score_datum,'%d.%m.%Y %H:%i:%s ') as score_datum FROM heim_score WHERE id_user = $value and score_name = '$values' ORDER BY score_datum DESC; ");
-				if ( ! $abfrage )
+				$update = mysqli_query($conn, "UPDATE heim_user SET user_rfid = '12345678' WHERE id_user = '$value'; ");
+				if ( ! $update )
 				{
 				die('Ungültige Abfrage: ' . mysqli_error());
 				}
 				
-				echo '<table border="1">';
-				while ($zeile = mysqli_fetch_array( $abfrage, MYSQLI_ASSOC ))
-				{
-					
-    
-					
-				echo "<tr>";
-				echo "<td>". $zeile['score_punkte'] . "</td>";
+				
+				
 		
-				echo "<td>".  $zeile['score_datum'].  "</td>";
-
-				echo "</tr>";
-				}
-				echo "</table>";
-			mysqli_free_result( $abfrage );
 
             }            
         }     }
      ?>
-	 
-	 <canvas id="myChart" width="20%" height="15%"></canvas>
-	 
-	 <script>/*var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
 
-    // The data for our dataset
-    data: {
-        labels: [	<?php
-		if (isset($_POST['absenden'])){
-		if (isset($_POST['User'])){
-			
-		$i = 0;
-            foreach ($_POST['User'] as $value) {
-                
-			
-				$abfrage = mysqli_query($conn, "SELECT score_punkte,  date_format(score_datum,'%d%m%Y%H%i%s') as score_datum  FROM heim_score WHERE id_user = $value and score_name = '$values' ORDER BY score_datum DESC; ");
-				if ( ! $abfrage )
-				{
-				die('Ungültige Abfrage: ' . mysqli_error());
-				}
-				
-			
-				while ($zeile = mysqli_fetch_array( $abfrage, MYSQLI_ASSOC ))
-				{
-				echo $zeile['score_datum'] ;
-				if ($i < 2)
-				{
-					echo ", ";
-				}
-				$i = $i + 1;
-			}
-		}
-		}
-		}
-		 ?>],
-        datasets: [{
-            label: "Analysegraph",
-            backgroundColor: 'rgb(0,0,139)',
-            borderColor: 'rgb(0,0,139)',
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});*/
-</script>
  </body>
  <footer class="footer">
       <div class="container">

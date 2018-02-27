@@ -41,7 +41,20 @@
 		</div>
 
 	</div>
+	<?php
+		if(isset($_GET['daten'])){
+		$db = mysqli_connect("localhost", "root", "", "regenbogenheim");
+			
+				$id_user =  1;
+				$score_punkte = $_GET['daten'];
+				$score_name = 'memory';
+				$eintragen = mysqli_query($db, "INSERT INTO heim_score (id_user, score_punkte, score_name) VALUES ('$id_user', '$score_punkte' , '$score_name')");
+		}
+	?>
+
+	}
 </html>
     <script  src="js/index.js"></script>
+	
 </body>
 </html>

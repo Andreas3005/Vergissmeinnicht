@@ -126,11 +126,14 @@ app.controller("CardController", function($scope, $timeout) {
 
 		if (numPairs == constants.getNumMatches()) {
 			$scope.stopTimer();
+			 var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "memory.php?daten="+scope, true);
+			xhttp.send('daten='+scope);
 		}
 	} //end of check()
 
 	// for the timer
-	$scope.timeLimit = 120000;
+	$scope.timeLimit = 1200000;
 	$scope.isCritical = false;
 	
 	var timer = null;
@@ -141,7 +144,7 @@ app.controller("CardController", function($scope, $timeout) {
 		// game with a start button.
 		$scope.deck = createDeck();
 		// set the time of 1 minutes and remove the cards guard
-		$scope.timeLimit = 120000;
+		$scope.timeLimit = 1200000;
 		$scope.isGuarding = false;
 		$scope.inGame = true;
 

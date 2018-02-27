@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+<?php
+	session_start();
+if(!isset($_SESSION['id_user'])) {
+ die('Bitte zuerst <a href="login.php">einloggen');
+}
+?>
 <head>
     <meta charset="UTF-8">
     <script src="js/jquery-1.8.3.min.js"></script>
@@ -23,13 +29,21 @@
 		
     </script>
 	<?php
-	if(isset($_POST['score'])){
-   $email = $_POST['variable'] ;
-	echo $email;
-
-	print_r($_POST);}
 	
-	echo "test";
+	//Setzt die Punkte
+	if(isset($_GET['daten'])){
+		$db = mysqli_connect("localhost", "root", "", "regenbogenheim");
+			
+				$id_user =  $_SESSION['id_user'];
+				$score_punkte = $_GET['daten'];
+				$score_name = 'dragdrop';
+				$eintragen = mysqli_query($db, "INSERT INTO heim_score (id_user, score_punkte, score_name) VALUES ('$id_user', '$score_punkte' , '$score_name')");
+	
+
+	}
+	
+	
+
 	
 	?>
     <link type="text/css" rel="stylesheet" href="css/jdropwords.css" />

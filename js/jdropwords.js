@@ -201,7 +201,7 @@ var score = 0;
    * @param jQuery Obj activity appContainer.
    *   the container for the app.
    */
-  function checkAnswers(answers, appContainer, score) {
+  function checkAnswers(answers, appContainer) {
     
     var nbQuestions = 0;
     var animUpDuration = 75;
@@ -253,14 +253,16 @@ var score = 0;
     // Submit results through ajax (post).
     if (settings.submitAjax) {
       var postParams = {
-        score : "12",
+        score : score,
         nbqst : nbQuestions
       }
-      postParams = $.extend( {}, postParams, settings.submitAjaxExtraParams );
-      $.post(settings.submitAjaxUrl, postParams );
-	  /*request.open('post', 'dragdrop.php', true);
-	request.setRequestHeader('Content-Type', 'application/x-www-formurlencoded');
-	  request.send('daten='+score);*/
+     /* postParams = $.extend( {}, postParams, settings.submitAjaxExtraParams );
+      $.post(settings.submitAjaxUrl, postParams );*/
+	  //sendet die Punkte
+	   var xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "dragdrop.php?daten="+score, true);
+	xhttp.send('daten='+score);
+	  
 
     }
   }
