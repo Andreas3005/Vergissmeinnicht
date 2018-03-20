@@ -1,6 +1,6 @@
 <html>
 <?php
-$fd = dio_open( '/dev/ttyS1', O_RDWR );
+$fd = dio_open( '/dev/ttyUSB0', O_RDWR );
 dio_tcsetattr( $fd, array(
 						'baud'         => 9600,
 						'bits'         => 8,
